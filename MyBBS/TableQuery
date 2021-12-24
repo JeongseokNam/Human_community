@@ -1,0 +1,31 @@
+create sequence memno_seq;
+create sequence comno_seq;
+create sequence bbsno_seq
+increment by 1;
+---시퀀스
+
+create table member(
+no number(4) primary key,
+name varchar2(8) not null,
+id varchar2(20) not null,
+pwd varchar2(20) not null
+);
+---회원테이블
+
+create table bbslist(
+no number(10) primary key,
+writer varchar2(8) not null,
+title varchar2(20) not null,
+memo varchar2(100) not null,
+views number(10) not null
+);
+--게시글테이블
+
+create table commentlist(
+comno number primary key,
+bbsno number,
+commenter varchar2(8),
+content varchar2(100)
+);
+
+--댓글테이블

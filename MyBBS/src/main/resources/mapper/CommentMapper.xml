@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.human.DAO.IF_CommentDAO">
+ <insert id="insetComment">
+ 	insert into commentlist values (comno_seq.nextval, #{bbsno},#{commenter}, #{content}) 
+ </insert>
+ 
+ <select id="selectAllComment" resultType="com.human.VO.CommentVO">
+ 	select * from commentlist where bbsno=#{bbsno}
+ </select>
+</mapper>
