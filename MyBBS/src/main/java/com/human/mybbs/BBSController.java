@@ -64,8 +64,8 @@ public class BBSController {
 	}
 
 	@RequestMapping(value = "/delPost", method = RequestMethod.GET)
-	public String delBBS(Locale locale, int bbsindex,@RequestParam("name") String name) throws Exception {
+	public String delBBS(Locale locale, int bbsindex) throws Exception {
 		bbsService.delPost(bbsindex);
-		return "bbs/BBSMain";
+		return "redirect:/BBSMain";
 	}
 }
